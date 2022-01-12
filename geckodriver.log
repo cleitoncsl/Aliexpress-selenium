@@ -712,3 +712,237 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642017034661	geckodriver	INFO	Listening on 127.0.0.1:55940
+1642017037726	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55941" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileQnl1Qo"
+*** You are running in headless mode.
+1642017038047	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileQnl1Qo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55941/devtools/browser/641cc6d2-e7d6-43d4-9b16-4fab00280ad7
+1642017039222	Marionette	INFO	Listening on port 55948
+1642017039281	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642017223555	geckodriver	INFO	Listening on 127.0.0.1:56308
+1642017226622	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "56310" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilez07UO6"
+*** You are running in headless mode.
+1642017226924	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilez07UO6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56310/devtools/browser/d2733368-cc0e-495c-b01b-02c43c3d4bb6
+1642017227963	Marionette	INFO	Listening on port 56323
+1642017228179	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642018857395	geckodriver	INFO	Listening on 127.0.0.1:60964
+1642018860464	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "60965" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilenammRo"
+*** You are running in headless mode.
+1642018860795	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilenammRo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60965/devtools/browser/10391184-f563-4cf4-a170-0019b50e2179
+1642018861874	Marionette	INFO	Listening on port 60971
+1642018862018	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642018877474	geckodriver	INFO	Listening on 127.0.0.1:61071
+1642018880505	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "61072" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileZAgyiM"
+*** You are running in headless mode.
+1642018880818	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileZAgyiM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61072/devtools/browser/ea644b15-c92e-420a-92a1-ce9cdfc74a0b
+1642018881871	Marionette	INFO	Listening on port 61078
+1642018882047	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642018988032	geckodriver	INFO	Listening on 127.0.0.1:59500
+1642018991109	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "59501" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileKv3X9b"
+*** You are running in headless mode.
+1642018991428	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileKv3X9b\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59501/devtools/browser/db635ef9-15f4-4661-aff1-8b54a3cde44b
+1642018992470	Marionette	INFO	Listening on port 59509
+1642018992673	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+1642019109994	geckodriver	INFO	Listening on 127.0.0.1:59679
+1642019113061	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "59680" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileCFqgl6"
+*** You are running in headless mode.
+1642019113422	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileCFqgl6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59680/devtools/browser/2f8c84ad-98e7-4190-899c-de2e6b7c75bb
+1642019114452	Marionette	INFO	Listening on port 59686
+1642019114661	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642019145290	geckodriver	INFO	Listening on 127.0.0.1:59802
+1642019148348	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "59803" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileYGsHS6"
+*** You are running in headless mode.
+1642019148657	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileYGsHS6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59803/devtools/browser/db517fc3-6ea0-4661-9ef3-0810d615f097
+1642019149719	Marionette	INFO	Listening on port 59810
+1642019149903	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642019257477	geckodriver	INFO	Listening on 127.0.0.1:57264
+1642019260542	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57265" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileqdH4Th"
+*** You are running in headless mode.
+1642019260852	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileqdH4Th\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57265/devtools/browser/8926a50f-1684-4fc3-992f-b20e6d5c6fe1
+1642019261983	Marionette	INFO	Listening on port 57271
+1642019262081	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+1642019298616	geckodriver	INFO	Listening on 127.0.0.1:57391
+1642019301687	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57392" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileUKFHNj"
+*** You are running in headless mode.
+1642019302012	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileUKFHNj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57392/devtools/browser/c8273708-be7d-4ee5-91d9-dc0df3ea4b69
+1642019303137	Marionette	INFO	Listening on port 57398
+1642019303243	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+1642019382371	geckodriver	INFO	Listening on 127.0.0.1:57546
+1642019385422	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57547" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilem9TbHb"
+*** You are running in headless mode.
+1642019385802	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilem9TbHb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57547/devtools/browser/bba2eae7-2739-434c-9864-24ba91723564
+1642019386894	Marionette	INFO	Listening on port 57554
+1642019386992	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642019401114	geckodriver	INFO	Listening on 127.0.0.1:57666
+1642019404148	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57667" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileq61Lkw"
+*** You are running in headless mode.
+1642019404462	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileq61Lkw\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57667/devtools/browser/a5970a4e-49f9-41da-9871-8c590314738b
+1642019405687	Marionette	INFO	Listening on port 57674
+1642019406192	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642019425565	geckodriver	INFO	Listening on 127.0.0.1:62918
+1642019428616	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "62919" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileqLMpWV"
+*** You are running in headless mode.
+1642019429009	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileqLMpWV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:62919/devtools/browser/dabf265a-061e-4b3d-80f9-b5e9c90ec8ad
+1642019430372	Marionette	INFO	Listening on port 60780
+1642019430670	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642019570658	geckodriver	INFO	Listening on 127.0.0.1:61004
+1642019573693	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "61005" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofile29oGnd"
+*** You are running in headless mode.
+1642019574022	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofile29oGnd\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:61005/devtools/browser/57dc32c4-46da-4e29-bc8f-594283db64dd
+1642019575014	Marionette	INFO	Listening on port 61011
+1642019575251	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+1642019735268	geckodriver	INFO	Listening on 127.0.0.1:56850
+1642019738345	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "56851" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofile08VVDy"
+*** You are running in headless mode.
+1642019738770	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofile08VVDy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56851/devtools/browser/a5e847ac-51e9-42b4-a975-0feafb92dc4d
+1642019740070	Marionette	INFO	Listening on port 56858
+1642019740427	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642019880843	geckodriver	INFO	Listening on 127.0.0.1:57032
+1642019883871	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57033" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileTznDjZ"
+*** You are running in headless mode.
+1642019884181	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileTznDjZ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57033/devtools/browser/70ee407b-2a53-4835-8515-b1127559e815
+1642019885250	Marionette	INFO	Listening on port 57041
+1642019885425	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642019919975	geckodriver	INFO	Listening on 127.0.0.1:53889
+1642019923035	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "53890" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileImxwQd"
+*** You are running in headless mode.
+1642019923417	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileImxwQd\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53890/devtools/browser/c40e4c22-ff99-4118-9ee4-4376687e116a
+1642019924496	Marionette	INFO	Listening on port 53897
+1642019924589	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642020027950	geckodriver	INFO	Listening on 127.0.0.1:55075
+1642020031045	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55076" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileNEIEzP"
+*** You are running in headless mode.
+1642020031465	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileNEIEzP\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55076/devtools/browser/552bf2e1-8a6c-49ef-91e0-e931013e3a7a
+1642020032550	Marionette	INFO	Listening on port 55084
+1642020032626	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+1642020090194	geckodriver	INFO	Listening on 127.0.0.1:55224
+1642020093244	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55225" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileeiHhkm"
+*** You are running in headless mode.
+1642020093565	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileeiHhkm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55225/devtools/browser/6665db76-a4d1-46a5-a2dd-de96000df3fc
+1642020094655	Marionette	INFO	Listening on port 55234
+1642020094810	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.

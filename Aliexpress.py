@@ -22,11 +22,11 @@ soup = BeautifulSoup(html_content, 'html.parser')
 #lista_produtos = soup.find_all('div', class_='_3GR-w')
 
 lista_produtos = soup.select('h1._18_85')
+lista_preco = soup.find('div', class_="mGXnE _37W_B").select('a span')
 
 for produto in lista_produtos:
-    print('--------------------')
     nome_produto = produto.getText()
-    print(nome_produto)
+    print(f' Nome -> {nome_produto}')
 
-
-
+#preco_produto = lista_preco[0].getText() + lista_preco[1].getText() + lista_preco[2].getText() + lista_preco[3].getText()
+#print(preco_produto)
