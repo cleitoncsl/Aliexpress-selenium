@@ -145,7 +145,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
-1642010621281	geckodriver	INFO	Listening on 127.0.0.1:56131
+Exiting due to channel error.
+Listening on 127.0.0.1:56131
 1642010624385	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "56132" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileZrf7oz"
 *** You are running in headless mode.
 1642010624656	Marionette	INFO	Marionette enabled
@@ -223,7 +224,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642011235614	geckodriver	INFO	Listening on 127.0.0.1:56803
+Exiting due to channel error.
+Listening on 127.0.0.1:56803
 1642011238709	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "56804" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileHFwkQT"
 *** You are running in headless mode.
 1642011238999	Marionette	INFO	Marionette enabled
@@ -236,7 +238,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642011323895	geckodriver	INFO	Listening on 127.0.0.1:51309
+Exiting due to channel error.
+Listening on 127.0.0.1:51309
 1642011326978	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "51310" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofile4RWWlY"
 *** You are running in headless mode.
 1642011327263	Marionette	INFO	Marionette enabled
@@ -262,8 +265,9 @@ JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_d
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642011668446	geckodriver	INFO	Listening on 127.0.0.1:55253
-1642011671513	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55254" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileXpXynC"
+Exiting due to channel error.
+Exiting due to channel error.
+42011671513	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55254" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileXpXynC"
 *** You are running in headless mode.
 1642011671804	Marionette	INFO	Marionette enabled
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
@@ -374,7 +378,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642012157432	geckodriver	INFO	Listening on 127.0.0.1:56308
+Exiting due to channel error.
+Listening on 127.0.0.1:56308
 1642012160525	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "56309" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileAJEUns"
 *** You are running in headless mode.
 1642012160813	Marionette	INFO	Marionette enabled
@@ -465,7 +470,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
-1642012686451	geckodriver	INFO	Listening on 127.0.0.1:51493
+Exiting due to channel error.
+Listening on 127.0.0.1:51493
 1642012689521	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "51494" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileijIm8R"
 *** You are running in headless mode.
 1642012689804	Marionette	INFO	Marionette enabled
@@ -478,7 +484,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642012706886	geckodriver	INFO	Listening on 127.0.0.1:53568
+Exiting due to channel error.
+Listening on 127.0.0.1:53568
 1642012709948	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "53569" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileBpROLQ"
 *** You are running in headless mode.
 1642012710270	Marionette	INFO	Marionette enabled
@@ -504,7 +511,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642012807517	geckodriver	INFO	Listening on 127.0.0.1:58542
+Exiting due to channel error.
+Listening on 127.0.0.1:58542
 1642012810600	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "58543" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileEszMEv"
 *** You are running in headless mode.
 1642012810897	Marionette	INFO	Marionette enabled
@@ -530,7 +538,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642012862367	geckodriver	INFO	Listening on 127.0.0.1:58746
+Exiting due to channel error.
+Listening on 127.0.0.1:58746
 1642012865435	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "58747" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileS5AsIv"
 *** You are running in headless mode.
 1642012865744	Marionette	INFO	Marionette enabled
@@ -543,7 +552,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642013370140	geckodriver	INFO	Listening on 127.0.0.1:58810
+Exiting due to channel error.
+Listening on 127.0.0.1:58810
 1642013373194	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "58811" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileT3Nn7j"
 *** You are running in headless mode.
 1642013373495	Marionette	INFO	Marionette enabled
@@ -556,7 +566,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642013444528	geckodriver	INFO	Listening on 127.0.0.1:64304
+Exiting due to channel error.
+Listening on 127.0.0.1:64304
 1642013447565	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "64305" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileYWEMDI"
 *** You are running in headless mode.
 1642013447920	Marionette	INFO	Marionette enabled
@@ -569,7 +580,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642013505525	geckodriver	INFO	Listening on 127.0.0.1:64451
+Exiting due to channel error.
+Listening on 127.0.0.1:64451
 1642013508594	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "64452" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileD1ci6W"
 *** You are running in headless mode.
 1642013508896	Marionette	INFO	Marionette enabled
@@ -582,7 +594,8 @@ JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_d
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642013601656	geckodriver	INFO	Listening on 127.0.0.1:64566
+Exiting due to channel error.
+Listening on 127.0.0.1:64566
 1642013604702	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "64567" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilekgf0vg"
 *** You are running in headless mode.
 1642013605035	Marionette	INFO	Marionette enabled
@@ -608,8 +621,9 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://g.alicdn.com/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642013672106	geckodriver	INFO	Listening on 127.0.0.1:57894
-1642013675156	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57895" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileGCzSvx"
+Exiting due to channel error.
+Exiting due to channel error.
+42013675156	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57895" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileGCzSvx"
 *** You are running in headless mode.
 1642013675490	Marionette	INFO	Marionette enabled
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
@@ -764,8 +778,9 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642018988032	geckodriver	INFO	Listening on 127.0.0.1:59500
-1642018991109	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "59501" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileKv3X9b"
+Exiting due to channel error.
+Exiting due to channel error.
+42018991109	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "59501" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileKv3X9b"
 *** You are running in headless mode.
 1642018991428	Marionette	INFO	Marionette enabled
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
@@ -777,7 +792,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
-1642019109994	geckodriver	INFO	Listening on 127.0.0.1:59679
+Exiting due to channel error.
+Listening on 127.0.0.1:59679
 1642019113061	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "59680" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileCFqgl6"
 *** You are running in headless mode.
 1642019113422	Marionette	INFO	Marionette enabled
@@ -790,7 +806,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642019145290	geckodriver	INFO	Listening on 127.0.0.1:59802
+Exiting due to channel error.
+Listening on 127.0.0.1:59802
 1642019148348	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "59803" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileYGsHS6"
 *** You are running in headless mode.
 1642019148657	Marionette	INFO	Marionette enabled
@@ -816,7 +833,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
-1642019298616	geckodriver	INFO	Listening on 127.0.0.1:57391
+Exiting due to channel error.
+Listening on 127.0.0.1:57391
 1642019301687	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "57392" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileUKFHNj"
 *** You are running in headless mode.
 1642019302012	Marionette	INFO	Marionette enabled
@@ -855,7 +873,8 @@ JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: 
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642019425565	geckodriver	INFO	Listening on 127.0.0.1:62918
+Exiting due to channel error.
+Listening on 127.0.0.1:62918
 1642019428616	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "62919" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileqLMpWV"
 *** You are running in headless mode.
 1642019429009	Marionette	INFO	Marionette enabled
@@ -907,7 +926,8 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642019919975	geckodriver	INFO	Listening on 127.0.0.1:53889
+Exiting due to channel error.
+Listening on 127.0.0.1:53889
 1642019923035	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "53890" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileImxwQd"
 *** You are running in headless mode.
 1642019923417	Marionette	INFO	Marionette enabled
@@ -920,8 +940,9 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642020027950	geckodriver	INFO	Listening on 127.0.0.1:55075
-1642020031045	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55076" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileNEIEzP"
+Exiting due to channel error.
+Exiting due to channel error.
+42020031045	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55076" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileNEIEzP"
 *** You are running in headless mode.
 1642020031465	Marionette	INFO	Marionette enabled
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
@@ -933,8 +954,9 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
-1642020090194	geckodriver	INFO	Listening on 127.0.0.1:55224
-1642020093244	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55225" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileeiHhkm"
+Exiting due to channel error.
+Exiting due to channel error.
+42020093244	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "55225" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofileeiHhkm"
 *** You are running in headless mode.
 1642020093565	Marionette	INFO	Marionette enabled
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
@@ -946,3 +968,16 @@ JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js
 JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+Exiting due to channel error.
+Exiting due to channel error.
+1642080445221	geckodriver	INFO	Listening on 127.0.0.1:51363
+1642080448305	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51364" "-no-remote" "-profile" "C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilePce1oO"
+1642080448763	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Cleiton\\AppData\\Local\\Temp\\rust_mozprofilePce1oO\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51364/devtools/browser/1351667a-e7a3-4a1e-8574-415768332d90
+1642080450683	Marionette	INFO	Listening on port 51369
+1642080451002	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://assets.alicdn.com/g/secdev/sufei_data/3.9.9/index.js, line 1: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://assets.alicdn.com/g/AWSC/et/1.62.1/et_n.js, line 4: WebGL context was lost.
+JavaScript warning: https://assets.alicdn.com/g??xlly/spl/rp.js,secdev/nsv/1.0.78/ns_e_88_3_n.js?v=1, line 5: WebGL context was lost.
