@@ -6,6 +6,8 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
+from collections import Counter
+
 
 url = "https://pt.aliexpress.com/category/201054516/tablets.html?spm=a2g0o.category_nav.1.369.3770609dA0wBh7"
 
@@ -50,6 +52,7 @@ def click_button (navegador, name_button, id_delay):
 
 if __name__ == "__main__":
     delay = 5
+    site = "https://pt.aliexpress.com"
     option = Options()
     option.headless = False
     navegador = webdriver.Chrome(options=option)
@@ -78,12 +81,15 @@ soup = BeautifulSoup(html_content, 'html.parser')
 
 # _3t7zg _2f4Ho
 
-lista_produtos = soup.find_all('div', class_='_3GR-w')
+# a class="_3t7zg _2f4Ho"
 
+#lista_produtos = soup.find_all('div', class_='_3GR-w')
+lista_produtos = soup.find_all('a', attrs={'class': '_3t7zg _2f4Ho'})
 
 sleep(1)
 
 contador = 0
+
 for produto in lista_produtos:
     sleep(0.1)
     print(f'----------------------------------------ID-{contador}----------------------------------------------------------------------')
@@ -102,9 +108,9 @@ for produto in lista_produtos:
     sleep(0.1)
     try:
         if qtde_vendas is None:
-            print('Frete -> -')
+            print('qtde_vendas -> -')
         else:
-            print(f'Frete -> {qtde_vendas[0].getText()}')
+            print(f'qtde_vendas -> {qtde_vendas[0].getText()}')
     except Exception as e:
         print(f'qtde_vendas -> -')
 
@@ -148,13 +154,46 @@ for produto in lista_produtos:
     except Exception as e:
         print(f'Loja -> -')
 
-    link_produto = lista_produtos[0].find('a', class_="_3t7zg _2f4Ho")
-    sleep(0.1)
+    link_produto = [a['href'] for a in soup.find_all('a', href=True) if a.text]
+    if contador == 0:
+        x = contador
+        link_produto_final = link_produto[x]
+    elif (contador % 2) == 0:
+        x = contador * 2
+        link_produto_final = link_produto[x]
+    else:
+        x = contador * 2
+        link_produto_final = link_produto[x]
     try:
-        if link_produto is None:
+        if link_produto_final is None:
             print('Loja -> -')
         else:
-            print(f'Loja -> {link_produto[0].getText()}')
+            print(f'Loja -> {site + link_produto_final}')
+
+    except Exception as e:
+        print(f'Loja -> -')
+
+    promocao = produto.find_all('img', class_='_1mroo')
+    len_promocao = len(promocao)
+    texto_promocao = str(promocao)
+    sleep(0.1)
+    try:
+        if texto_promocao.count('https') is None:
+            print('Promocao? -> (n)')
+        else:
+            print(f'Promocao? -> (s)')
+    except Exception as e:
+        print(f'Loja -> -')
+
+    top_selling  = produto.find_all('img', class_='_1mroo')
+    len_top_selling  = len(top_selling )
+    texto_top_selling  = str(top_selling )
+    sleep(0.1)
+    try:
+        if top_selling.count('https') is None:
+            print('Promocao? -> (n)')
+        else:
+            print(f'Promocao? -> (s)')
     except Exception as e:
         print(f'Loja -> -')
 
