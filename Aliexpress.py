@@ -195,7 +195,7 @@ for produto in lista_produtos:
         else:
             print(f'Promocao? -> (s)')
     except Exception as e:
-        print(f'Loja  -> -')
+        print(f'Loja -> -')
 
     contador += 1
 
