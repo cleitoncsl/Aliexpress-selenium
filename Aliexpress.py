@@ -270,7 +270,6 @@ for produto in lista_produtos:
               "Tipo Frete": vTipo_Frete, "Tipo Devolucao": vTipo_Devolucao, "Avaliações": vAvaliacoes,
               "Loja": vLoja, "Link Produto": vLinkProdutoFinal, "Promoção": vPromocao, "Top Selling": v_top_selling}}
 
-
     contador += 1
 
     dictionary_copy = _.copy()
