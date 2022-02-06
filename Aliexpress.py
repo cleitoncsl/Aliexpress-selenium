@@ -6,6 +6,8 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
+import re
+import jsonpickle
 import json
 from collections import Counter
 
@@ -115,6 +117,7 @@ for produto in lista_produtos:
         print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText()}')
         vPreco_produto = {
             preco_produto[0].getText() + preco_produto[1].getText()}
+        vPreco_produto = str(vPreco_produto)
 
     sleep(0.1)
 
@@ -259,16 +262,24 @@ for produto in lista_produtos:
         print(f'Loja -> -')
         v_top_selling = "(n)"
 
+    _ = str(vPreco_produto)
+    vPreco_produto = re.sub('[{}]', '', _)
+
     _ = {f'Produto {contador}':
              {"Nome Produto": vNome_produto, "Preco": vPreco_produto, "Qtde Vendida": vQtde_Vendas,
               "Tipo Frete": vTipo_Frete, "Tipo Devolucao": vTipo_Devolucao, "Avaliações": vAvaliacoes,
-              "Loja": vLoja, "Link Produto": vLinkProdutoFinal, "Promoção": vPromocao, "Top Selling": v_top_selling}, }
+              "Loja": vLoja, "Link Produto": vLinkProdutoFinal, "Promoção": vPromocao, "Top Selling": v_top_selling}}
+
+
+    contador += 1
 
     dictionary_copy = _.copy()
     lista_final.append(dictionary_copy)
 
 
-    contador += 1
-
-
 navegador.quit()
+
+dict_json = json.dumps(lista_final, indent=4)
+
+with open('produtos.json', 'w') as arquivo:
+    json.dump(lista_final, arquivo)
