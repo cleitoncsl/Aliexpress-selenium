@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
+import json
 from collections import Counter
 
 url = "https://pt.aliexpress.com/category/201054516/tablets.html?spm=a2g0o.category_nav.1.369.3770609dA0wBh7"
@@ -88,27 +89,20 @@ lista_produtos = soup.find_all('a', attrs={'class': '_3t7zg _2f4Ho'})
 sleep(1)
 
 contador = 0
-set_produto = []
-set_preco_produto = []
-set_qtde_vendas = []
-set_tipo_frete = []
-set_tipo_devolucao = []
-set_avaliacoes = []
-set_loja = []
-set_link_produto = []
-set_promocao = []
-set_top_selling = []
+lista_final = []
 
 for produto in lista_produtos:
     sleep(0.1)
+
     print(f'----------------------------------------ID-{contador}----------------------------------------------------------------------')
     nome_produto = produto.select('h1._18_85')
     sleep(0.1)
-    print(f'Nome -> {nome_produto[0].getText()}')
 
+    print(f'Nome -> {nome_produto[0].getText()}')
     vNome_produto = nome_produto[0].text
+
+
     preco_produto = produto.find('div', class_="mGXnE _37W_B").select('a span')
-    set_produto.append(vNome_produto)
 
     sleep(0.1)
 
@@ -121,8 +115,6 @@ for produto in lista_produtos:
         print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText()}')
         vPreco_produto = {
             preco_produto[0].getText() + preco_produto[1].getText()}
-
-    set_preco_produto.append(vPreco_produto)
 
     sleep(0.1)
 
@@ -141,10 +133,9 @@ for produto in lista_produtos:
         print(f'qtde_vendas -> -')
         vQtde_Vendas
 
-    set_qtde_vendas.append(vQtde_Vendas)
-
     tipo_frete = produto.select("span._2jcMA")
     sleep(0.1)
+
     try:
         if len(tipo_frete) == 0:
             print('Frete -> -')
@@ -157,8 +148,6 @@ for produto in lista_produtos:
     except Exception as e:
         print(f'Frete -> -')
         vTipo_Frete = tipo_frete[0].getText()
-
-    set_tipo_frete.append(vTipo_Frete)
 
     tipo_devolucao = produto.select("span._2jcMA")
     sleep(0.1)
@@ -175,8 +164,6 @@ for produto in lista_produtos:
         print(f'Devolução -> -')
         vTipo_Devolucao = "-"
 
-    set_tipo_devolucao.append(vTipo_Devolucao)
-
     avaliacoes = produto.select("span.eXPaM")
     sleep(0.1)
     try:
@@ -190,8 +177,6 @@ for produto in lista_produtos:
     except Exception as e:
         print(f'Avaliações -> -')
         vAvaliacoes = "-"
-
-    set_avaliacoes.append(vAvaliacoes)
 
     loja = produto.select("span._7CHGi")
     sleep(0.1)
@@ -207,8 +192,6 @@ for produto in lista_produtos:
     except Exception as e:
         print(f'Loja -> -')
         vLoja = "-"
-
-    set_loja.append(vLoja)
 
     link_produto = [a['href'] for a in soup.find_all('a', href=True) if a.text]
     if contador == 0:
@@ -233,8 +216,6 @@ for produto in lista_produtos:
         print(f'Loja -> -')
         vLinkProdutoFinal = "-"
 
-    set_link_produto.append(vLinkProdutoFinal)
-
     promocao = produto.find_all('img', class_='_1mroo')
     len_promocao = len(promocao)
     texto_promocao = str(promocao)
@@ -253,8 +234,6 @@ for produto in lista_produtos:
     except Exception as e:
         print(f'Loja -> -')
         vPromocao = "(n)"
-
-    set_promocao.append(vPromocao)
 
     top_selling = produto.find_all('img', class_='_1mroo')
     len_top_selling  = len(top_selling )
@@ -280,9 +259,16 @@ for produto in lista_produtos:
         print(f'Loja -> -')
         v_top_selling = "(n)"
 
+    _ = {f'Produto {contador}':
+             {"Nome Produto": vNome_produto, "Preco": vPreco_produto, "Qtde Vendida": vQtde_Vendas,
+              "Tipo Frete": vTipo_Frete, "Tipo Devolucao": vTipo_Devolucao, "Avaliações": vAvaliacoes,
+              "Loja": vLoja, "Link Produto": vLinkProdutoFinal, "Promoção": vPromocao, "Top Selling": v_top_selling}, }
 
-    set_top_selling.append(v_top_selling)
+    dictionary_copy = _.copy()
+    lista_final.append(dictionary_copy)
+
 
     contador += 1
+
 
 navegador.quit()
