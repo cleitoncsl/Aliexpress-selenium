@@ -276,7 +276,6 @@ for produto in lista_produtos:
     dictionary_copy = _.copy()
     lista_final.append(dictionary_copy)
 
-
 navegador.quit()
 
 dict_json = json.dumps(lista_final, indent=4)
