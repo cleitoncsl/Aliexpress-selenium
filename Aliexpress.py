@@ -11,7 +11,7 @@ import jsonpickle
 import json
 from collections import Counter
 
-url = "https://pt.aliexpress.com/category/201054516/tablets.html?spm=a2g0o.category_nav.1.369.3770609dA0wBh7"
+url = "https://pt.aliexpress.com/category/201000104/laptops.html?spm=a2g0o.category_nav.1.360.4204609deHfoan"
 
 sleep(1) # Time in seconds
 
@@ -278,9 +278,11 @@ for produto in lista_produtos:
     lista_final.append(dictionary_copy)
 
 
-navegador.quit()
-
 dict_json = json.dumps(lista_final, indent=4)
 
 with open('produtos.json', 'w') as arquivo:
     json.dump(lista_final, arquivo)
+
+navegador.quit()
+
+print("CONCLUÍDO")
