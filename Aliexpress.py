@@ -60,7 +60,7 @@ if __name__ == "__main__":
     click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
 
 
-div_mae = navegador.find_element_by_xpath("/html/body/div[3]/div[1]/div/div[2]/div[2]/div/div[2]")
+div_mae = navegador.find_element(By.XPATH, "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]")
 
 sleep(1)
 html_content = div_mae.get_attribute('outerHTML')
@@ -83,7 +83,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 # a class="_3t7zg _2f4Ho"
 
 #lista_produtos = soup.find_all('div', class_='_3GR-w')
-lista_produtos = soup.find_all('a', attrs={'class': '_3t7zg _2f4Ho'})
+lista_produtos = soup.find_all('div', class_='list--gallery--34TropR')
 
 sleep(1)
 
@@ -102,12 +102,12 @@ set_top_selling = []
 for produto in lista_produtos:
     sleep(0.1)
     print(f'----------------------------------------ID-{contador}----------------------------------------------------------------------')
-    nome_produto = produto.select('h1._18_85')
+    nome_produto = produto.select('h1', class_="manhattan--titleText--WccSjUS")
     sleep(0.1)
     print(f'Nome -> {nome_produto[0].getText()}')
 
     vNome_produto = nome_produto[0].text
-    preco_produto = produto.find('div', class_="mGXnE _37W_B").select('a span')
+    preco_produto = produto.find('div', class_="manhattan--price-sale--1CCSZfK").select('a span')
     set_produto.append(vNome_produto)
 
     sleep(0.1)
@@ -126,7 +126,7 @@ for produto in lista_produtos:
 
     sleep(0.1)
 
-    qtde_vendas = produto.select("span._1kNf9")
+    qtde_vendas = produto.select("span.manhattan--trade--2PeJIEB")
     sleep(0.1)
     try:
         if qtde_vendas is None:
@@ -143,7 +143,7 @@ for produto in lista_produtos:
 
     set_qtde_vendas.append(vQtde_Vendas)
 
-    tipo_frete = produto.select("span._2jcMA")
+    tipo_frete = produto.select("span.tag--textStyle--vcAi3Rh")
     sleep(0.1)
     try:
         if len(tipo_frete) == 0:
@@ -193,7 +193,7 @@ for produto in lista_produtos:
 
     set_avaliacoes.append(vAvaliacoes)
 
-    loja = produto.select("span._7CHGi")
+    loja = produto.select("a.cards--storeLink--1_xx4cD")
     sleep(0.1)
     try:
         if loja is None:
@@ -226,8 +226,8 @@ for produto in lista_produtos:
             vLinkProdutoFinal = "-"
 
         else:
-            print(f'Loja -> {site + link_produto_final}')
-            vLinkProdutoFinal = site + link_produto_final
+            print(f'Loja -> {"https:" + link_produto_final}')
+            vLinkProdutoFinal = "https:" + link_produto_final
 
     except Exception as e:
         print(f'Loja -> -')
