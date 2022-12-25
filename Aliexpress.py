@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -9,9 +10,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 from collections import Counter
 
-url = "https://pt.aliexpress.com/category/201054516/tablets.html?spm=a2g0o.category_nav.1.369.3770609dA0wBh7"
+# url = "https://pt.aliexpress.com/w/wholesale-xiaomi-mi-pad-5.html?catId=0&initiative_id=SB_20221224181351&SearchText=xiaomi%2Bmi%2Bpad%2B5&spm=a2g0o.home.1000002.0&dida=y"
+url = "https://pt.aliexpress.com/"
 
 sleep(1) # Time in seconds
+
+os.system("taskkill /f /im chromedriver.exe")
+os.system("taskkill /f /im msedge.exe")
 
 def click_button (navegador, name_button, id_delay):
     try:
@@ -39,7 +44,25 @@ def click_button (navegador, name_button, id_delay):
         sleep(1)
         navegador.execute_script("window.scrollTo(0,5000,document.body.scrollHeight)")
         sleep(1)
-        navegador.execute_script("window.scrollTo(0,1000,document.body.scrollHeight)")
+        navegador.execute_script("window.scrollTo(0,5500,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,6000,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,6500,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,7000,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,7500,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,8000,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,8500,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,9000,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,9500,document.body.scrollHeight)")
+        sleep(1)
+        navegador.execute_script("window.scrollTo(0,10000,document.body.scrollHeight)")
         sleep(1)
         navegador.execute_script("window.scrollTo(0,0, document.body.scrollHeight)")
 
@@ -51,23 +74,53 @@ def click_button (navegador, name_button, id_delay):
 
 
 if __name__ == "__main__":
-    delay = 5
+    delay = 10
     site = "https://pt.aliexpress.com"
+
+    #------------CHROME------------#
     option = Options()
+    option.add_argument("--incognito")
     option.headless = False
     navegador = webdriver.Chrome(options=option)
+    # ------------CHROME------------#
+
+    #option = webdriver.EdgeOptions()
+    # option.add_argument("start-minimized")
+    # option.add_argument("inprivate")
+    # option.add_argument("headless")
+    # option.headless = False
+    # navegador = webdriver.Edge(options=option)
 
     navegador.get(url)
+    sleep(5)
+    ######################################## ACEITAR OS COOKIES ########################################
+    # cookie_accept = navegador.find_element(By.XPATH, "/html/body/div[4]/div/div[2]/div[3]/div[2]")
+    cookie_accept = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, "/html/body/div[4]/div/div[2]/div[3]/div[2]"))).click()
+    # sleep(1)
+    ######################################## ACEITAR OS COOKIES ########################################
+
+    ######################################## CAMPO PESQUISA ########################################
+    # campo_pesquisa = navegador.find_element(By.ID, "search-key")
+    campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.ID, "search-key")))
+    produto = "XIAOMI MI PAD 5"
+    #produto = input("Digite o produto desejado: ")
+    campo_pesquisa.send_keys(produto)
+    botao_lupa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-button")))
+    botao_lupa.click()
+    sleep(10)
+    print(f'PRODUTO: {produto.upper()}')
+
+    ######################################## CAMPO PESQUISA ########################################
+
     click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
 
 
-div_mae = navegador.find_element(By.XPATH, "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]")
-
+# div_mae = navegador.find_element(By.XPATH, "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]")
+div_mae = div_mae = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "list--gallery--34TropR")))
 sleep(1)
 html_content = div_mae.get_attribute('outerHTML')
 sleep(1)
 soup = BeautifulSoup(html_content, 'html.parser')
-
 
 #print(soup.prettify())
 
@@ -88,7 +141,7 @@ lista_produtos = soup.find_all('a', class_='manhattan--container--1lP57Ag cards-
 
 sleep(1)
 
-contador = 1
+contador = 0
 contador_page = 2
 set_produto = []
 set_preco_produto = []
@@ -98,45 +151,47 @@ set_tipo_devolucao = []
 set_avaliacoes = []
 set_loja = []
 set_link_produto = []
+set_link_loja = []
 set_promocao = []
 set_top_selling = []
 botao = navegador.find_element(By.CSS_SELECTOR,"#root > div.root--container--2gVZ5S0 > div > div.right--container--1WU9aL4.right--hasPadding--52H__oG > div > div.content--container--2dDeH1y > div.pagination--paginationList--2qhuJId > div.pagination--left--3ZLy8Mu > ul > li:nth-child(" + str(contador_page) + ")")
 
 while len(botao.text) > 0:
-
     for produto in lista_produtos:
         sleep(0.1)
         print(f'----------------------------------------ID-{contador}----------------------------------------------------------------------')
+        ######################################## NOME PRODUTO ########################################
+        #
         nome_produto = produto.select('h1', class_="manhattan--titleText--WccSjUS")
         sleep(0.1)
         print(f'Nome -> {nome_produto[0].getText()}')
-
         vNome_produto = nome_produto[0].text
+        #
+        ######################################## NOME PRODUTO ################################################################################ PRODUTO ########################################
+
+        ######################################## PRECO PRODUTO ########################################
         preco_produto = produto.find('div', class_="manhattan--price-sale--1CCSZfK").select('a span')
         set_produto.append(vNome_produto)
-
         sleep(0.1)
-
         try:
+            print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}')
+            vPreco_produto = {
+                preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}
+        except Exception as e:
             print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}')
             vPreco_produto = {
                 preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}
-
-        except Exception as e:
-            print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText()}')
-            vPreco_produto = {
-                preco_produto[0].getText() + preco_produto[1].getText()}
-
         set_preco_produto.append(vPreco_produto)
-
         sleep(0.1)
+        ######################################## PRECO PRODUTO ########################################
 
+        ######################################## QTDE PRODUTO ########################################
         qtde_vendas = produto.select("span.manhattan--trade--2PeJIEB")
         sleep(0.1)
         try:
-            if qtde_vendas is None:
-                print('qtde_vendas -> -')
-                vQtde_Vendas = qtde_vendas[0].getText()
+            if qtde_vendas is None or len(qtde_vendas) == 0:
+                print('qtde_vendas -> 0')
+                vQtde_Vendas = 0
 
             else:
                 print(f'qtde_vendas -> {qtde_vendas[0].getText()}')
@@ -144,27 +199,29 @@ while len(botao.text) > 0:
 
         except Exception as e:
             print(f'qtde_vendas -> -')
-            vQtde_Vendas
-
         set_qtde_vendas.append(vQtde_Vendas)
+        sleep(0.1)
+        ######################################## QTDE PRODUTO ########################################
 
+
+        ######################################## TIPO FRETE ########################################
         tipo_frete = produto.select("span.tag--textStyle--vcAi3Rh")
         sleep(0.1)
         try:
             if len(tipo_frete) == 0:
                 print('Frete -> -')
                 vTipo_Frete
-
             else:
                 print(f'Frete -> {tipo_frete[0].getText()}')
                 vTipo_Frete = tipo_frete[0].getText()
-
         except Exception as e:
             print(f'Frete -> -')
             vTipo_Frete = tipo_frete[0].getText()
-
         set_tipo_frete.append(vTipo_Frete)
+        sleep(0.1)
+        ######################################## TIPO FRETE ########################################
 
+        ######################################## TIPO DEVOLUCAO ########################################
         tipo_devolucao = produto.select("span._2jcMA")
         sleep(0.1)
         try:
@@ -179,10 +236,12 @@ while len(botao.text) > 0:
         except Exception as e:
             print(f'Devolução -> -')
             vTipo_Devolucao = "-"
-
         set_tipo_devolucao.append(vTipo_Devolucao)
 
-        avaliacoes = produto.select("span.eXPaM")
+        ######################################## TIPO DEVOLUCAO ########################################
+
+        ######################################## AVALICAOES ########################################
+        avaliacoes = produto.select("span.manhattan--evaluation--3cSMntr")
         sleep(0.1)
         try:
             if avaliacoes is None:
@@ -197,7 +256,9 @@ while len(botao.text) > 0:
             vAvaliacoes = "-"
 
         set_avaliacoes.append(vAvaliacoes)
+        ######################################## AVALICAOES ########################################
 
+        ######################################## LOJA ########################################
         loja = produto.select("a.cards--storeLink--1_xx4cD")
         sleep(0.1)
         try:
@@ -214,9 +275,17 @@ while len(botao.text) > 0:
             vLoja = "-"
 
         set_loja.append(vLoja)
+        ######################################## LOJA ########################################
 
+        ######################################## LINK PRODUTO ########################################
         link_produto = [a['href'] for a in soup.find_all('a', href=True) if a.text]
-        x = contador-1
+        if contador == 0:
+            x = contador
+        elif (contador % 2) == 0:
+            contador
+        else:
+            x = contador + 1
+
         link_produto_final = link_produto[x]
         try:
             if link_produto_final is None:
@@ -224,21 +293,39 @@ while len(botao.text) > 0:
                 vLinkProdutoFinal = "-"
 
             else:
-                print(f'Loja -> {"https:" + link_produto_final}')
+                print(f'Link Produto -> {"https:" + link_produto_final}')
                 vLinkProdutoFinal = "https:" + link_produto_final
 
         except Exception as e:
-            print(f'Loja -> -')
+            print(f'Link Produto -> -')
             vLinkProdutoFinal = "-"
 
         set_link_produto.append(vLinkProdutoFinal)
+        sleep(0.1)
+        ######################################## LINK PRODUTO ########################################
 
+        ######################################## LINK LOJA ########################################
+        link_loja = link_produto[x + 1]
+        try:
+            if link_loja is None:
+                print(f'Link Loja -> -')
+            else:
+                print(f'Link Loja - >{"https:" + link_loja}')
+                vLinkLojaFinal = "https:" + link_loja
+
+
+        except Exception as e:
+            print('Link Loja -> -')
+            vLinkLojaFinal = 0
+
+        set_link_loja.append(vLinkLojaFinal)
+        sleep(0.1)
+        ######################################## LINK LOJA ########################################
+
+        ######################################## PROMOCAO ########################################
         promocao = produto.find_all('img', class_='_1mroo')
         len_promocao = len(promocao)
         texto_promocao = str(promocao)
-
-        sleep(0.1)
-
         try:
             if texto_promocao.count('https') is None:
                 print('Promocao? -> (n)')
@@ -253,42 +340,43 @@ while len(botao.text) > 0:
             vPromocao = "(n)"
 
         set_promocao.append(vPromocao)
+        sleep(0.1)
+        ######################################## PROMOCAO ########################################
 
-        top_selling = produto.find_all('img', class_='_1mroo')
-        len_top_selling  = len(top_selling )
-        texto_top_selling  = str(top_selling )
+        ######################################## TOP SELLING ########################################
+        top_selling = produto.find_all('img', class_='tag--imgStyle--1hJHaAY')
 
         sleep(0.1)
-
         try:
-            if top_selling.count('https') is None:
+            top_selling = len(top_selling[0].get('src'))
+            if top_selling is None:
                 print('top_selling? -> (n)')
                 v_top_selling = "(n)"
 
             else:
-                if len_top_selling == 2:
                     print(f'top_selling? -> (s)')
                     v_top_selling = "(s)"
 
-                else:
-                    print(f'top_selling? -> (n)')
-                    v_top_selling = "(n)"
-
         except Exception as e:
-            print(f'Loja -> -')
+            print(f'top_selling -> (n)')
             v_top_selling = "(n)"
 
 
         set_top_selling.append(v_top_selling)
+        sleep(0.1)
+        ######################################## TOP SELLING ########################################
 
         contador += 1
-        lista = list(zip(set_produto,set_preco_produto,set_qtde_vendas,set_tipo_frete,set_tipo_devolucao,set_avaliacoes,set_loja,set_link_produto,set_promocao,set_top_selling)) ##resultado
+        x = contador
+        lista = list(zip(
+            set_produto, set_preco_produto, set_qtde_vendas, set_tipo_frete, set_tipo_devolucao,
+            set_avaliacoes, set_loja, set_link_produto, set_link_loja, set_promocao, set_top_selling)) ##resultado
         data_frame = pd.DataFrame(lista,
             columns=['Nome.Produto', 'Prc.Produto', 'Qtd.Vendas', 'Tipo.Frete', 'Tipo.Devolucao', 'Avaliacaoes',
-                     'Nome Loja', 'Link.Produto', 'Promocao', 'Top.Selling'])
+                     'Nome Loja', 'Link.Produto', 'Link.Loja', 'Promocao', 'Top.Selling'])
 
 
-        with pd.ExcelWriter(r"D:\Curso\Aliexpress-selenium\teste.xlsx", engine="xlsxwriter") as writer:
+        with pd.ExcelWriter(r"E:\Users\cleit\Documents\CURSO PYTHON\Aliexpress-selenium\teste.xlsx", engine="xlsxwriter") as writer:
             data_frame.to_excel(writer)
 
 
@@ -299,7 +387,21 @@ while len(botao.text) > 0:
         try:
             botao = navegador.find_element(By.CSS_SELECTOR,"#root > div.root--container--2gVZ5S0 > div > div.right--container--1WU9aL4.right--hasPadding--52H__oG > div > div.content--container--2dDeH1y > div.pagination--paginationList--2qhuJId > div.pagination--left--3ZLy8Mu > ul > li:nth-child(" + str(contador_page) + ")")
             botao.click()
+            sleep(10)
             click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
+            sleep(1)
+            div_mae = navegador.find_element(By.CLASS_NAME, "list--gallery--34TropR")
+            sleep(1)
+            print(f'#PARSING DOCUMENT#')
+            html_content = div_mae.get_attribute('outerHTML')
+            sleep(1)
+            print(f'#SOUP PARSER#')
+            soup = BeautifulSoup(html_content, 'html.parser')
+            print(f'#PARSE NEXT PAGE#')
+            lista_produtos = soup.find_all('a', class_='manhattan--container--1lP57Ag cards--gallery--2o6yJVt')
+
+
+
         except Exception as e:
             print(f'Erro')
 
