@@ -102,7 +102,7 @@ if __name__ == "__main__":
     ######################################## CAMPO PESQUISA ########################################
     # campo_pesquisa = navegador.find_element(By.ID, "search-key")
     campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.ID, "search-key")))
-    produto = "XIAOMI MI PAD 5"
+    produto = "XIAOMI MI PAD"
     #produto = input("Digite o produto desejado: ")
     campo_pesquisa.send_keys(produto)
     botao_lupa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-button")))
@@ -141,6 +141,7 @@ lista_produtos = soup.find_all('a', class_='manhattan--container--1lP57Ag cards-
 
 sleep(1)
 
+velocimento = 0
 contador = 0
 contador_page = 2
 set_produto = []
@@ -163,31 +164,59 @@ while len(botao.text) > 0:
         ######################################## NOME PRODUTO ########################################
         #
         nome_produto = produto.select('h1', class_="manhattan--titleText--WccSjUS")
-        sleep(0.1)
+        sleep(velocimento)
         print(f'Nome -> {nome_produto[0].getText()}')
         vNome_produto = nome_produto[0].text
+        set_produto.append(vNome_produto)
         #
         ######################################## NOME PRODUTO ################################################################################ PRODUTO ########################################
 
         ######################################## PRECO PRODUTO ########################################
         preco_produto = produto.find('div', class_="manhattan--price-sale--1CCSZfK").select('a span')
-        set_produto.append(vNome_produto)
-        sleep(0.1)
+        tam_preco = len(preco_produto)
+        sleep(velocimento)
         try:
-            print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}')
-            vPreco_produto = {
-                preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}
+            if tam_preco == 6:
+                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}')
+                vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}
+                set_preco_produto.append(vPreco_produto)
+
+            elif tam_preco == 5:
+                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText()}')
+                vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText()}
+                set_preco_produto.append(vPreco_produto)
+
+
+
+            elif tam_preco == 4:
+                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}')
+                vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}
+                set_preco_produto.append(vPreco_produto)
+
+            elif tam_preco == 3:
+                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() }')
+                vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() }
+                set_preco_produto.append(vPreco_produto)
+
+            elif tam_preco == 2:
+                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() }')
+                vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() }
+                set_preco_produto.append(vPreco_produto)
+
+            elif tam_preco == 1:
+                print(f'Preço -> {preco_produto[0].getText()}')
+                vPreco_produto = {preco_produto[0].getText()}
+                set_preco_produto.append(vPreco_produto)
+
         except Exception as e:
-            print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}')
-            vPreco_produto = {
-                preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}
-        set_preco_produto.append(vPreco_produto)
-        sleep(0.1)
+            print(f'Preço -> 0')
+            vPreco_produto = 0
+        # set_preco_produto.append(vPreco_produto) <-deletar
         ######################################## PRECO PRODUTO ########################################
 
         ######################################## QTDE PRODUTO ########################################
         qtde_vendas = produto.select("span.manhattan--trade--2PeJIEB")
-        sleep(0.1)
+        sleep(velocimento)
         try:
             if qtde_vendas is None or len(qtde_vendas) == 0:
                 print('qtde_vendas -> 0')
@@ -200,30 +229,39 @@ while len(botao.text) > 0:
         except Exception as e:
             print(f'qtde_vendas -> -')
         set_qtde_vendas.append(vQtde_Vendas)
-        sleep(0.1)
         ######################################## QTDE PRODUTO ########################################
 
 
         ######################################## TIPO FRETE ########################################
         tipo_frete = produto.select("span.tag--textStyle--vcAi3Rh")
-        sleep(0.1)
+        sleep(velocimento)
         try:
-            if len(tipo_frete) == 0:
-                print('Frete -> -')
-                vTipo_Frete
+
+            tam_campo_frete = len(tipo_frete)
+            if tam_campo_frete == 2:
+                print(f'Preço -> {tipo_frete[1].getText()}')
+                vTipo_Frete = {tipo_frete[1].getText()}
+                set_tipo_frete.append(vTipo_Frete)
+
+            elif tam_campo_frete == 1:
+                print(f'Preço -> {tipo_frete[0].getText()}')
+                vTipo_Frete = {tipo_frete[0].getText()}
+                set_tipo_frete.append(vTipo_Frete)
+
             else:
-                print(f'Frete -> {tipo_frete[0].getText()}')
-                vTipo_Frete = tipo_frete[0].getText()
+                print('fPreco -> 0')
+                set_tipo_frete.append(0)
+
         except Exception as e:
-            print(f'Frete -> -')
-            vTipo_Frete = tipo_frete[0].getText()
-        set_tipo_frete.append(vTipo_Frete)
-        sleep(0.1)
+            print(f'Erro')
+
+
+        sleep(velocimento)
         ######################################## TIPO FRETE ########################################
 
         ######################################## TIPO DEVOLUCAO ########################################
         tipo_devolucao = produto.select("span._2jcMA")
-        sleep(0.1)
+        sleep(velocimento)
         try:
             if tipo_devolucao is None:
                 print('Frete -> -')
@@ -242,9 +280,9 @@ while len(botao.text) > 0:
 
         ######################################## AVALICAOES ########################################
         avaliacoes = produto.select("span.manhattan--evaluation--3cSMntr")
-        sleep(0.1)
+        sleep(velocimento)
         try:
-            if avaliacoes is None:
+            if avaliacoes is None: #avaliacoes
                 print('Avaliações -> -')
                 vAvaliacoes = "-"
             else:
@@ -260,7 +298,7 @@ while len(botao.text) > 0:
 
         ######################################## LOJA ########################################
         loja = produto.select("a.cards--storeLink--1_xx4cD")
-        sleep(0.1)
+        sleep(velocimento)
         try:
             if loja is None:
                 print('Loja -> -')
@@ -301,7 +339,7 @@ while len(botao.text) > 0:
             vLinkProdutoFinal = "-"
 
         set_link_produto.append(vLinkProdutoFinal)
-        sleep(0.1)
+        sleep(velocimento)
         ######################################## LINK PRODUTO ########################################
 
         ######################################## LINK LOJA ########################################
@@ -319,34 +357,32 @@ while len(botao.text) > 0:
             vLinkLojaFinal = 0
 
         set_link_loja.append(vLinkLojaFinal)
-        sleep(0.1)
+        sleep(velocimento)
         ######################################## LINK LOJA ########################################
 
         ######################################## PROMOCAO ########################################
-        promocao = produto.find_all('img', class_='_1mroo')
-        len_promocao = len(promocao)
-        texto_promocao = str(promocao)
+        promocao = produto.select("span.tag--textStyle--vcAi3Rh")
+
         try:
-            if texto_promocao.count('https') is None:
-                print('Promocao? -> (n)')
-                vPromocao = "(n)"
+            len_promocao = len(promocao)
+            if len_promocao == 2:
+                print(f'Promoção -> {promocao[0].getText()}')
+                vTipo_Frete = {promocao[0].getText()}
+                set_promocao.append(vTipo_Frete)
 
             else:
-                print(f'Promocao? -> (s)')
-                vPromocao = "(s)"
+                print(f'Promoção -> (n)')
+                set_promocao.append("(n)")
 
         except Exception as e:
-            print(f'Loja -> -')
+            print(f'Promoção -> -')
             vPromocao = "(n)"
 
-        set_promocao.append(vPromocao)
-        sleep(0.1)
         ######################################## PROMOCAO ########################################
 
         ######################################## TOP SELLING ########################################
         top_selling = produto.find_all('img', class_='tag--imgStyle--1hJHaAY')
-
-        sleep(0.1)
+        sleep(velocimento)
         try:
             top_selling = len(top_selling[0].get('src'))
             if top_selling is None:
@@ -363,7 +399,7 @@ while len(botao.text) > 0:
 
 
         set_top_selling.append(v_top_selling)
-        sleep(0.1)
+        sleep(velocimento)
         ######################################## TOP SELLING ########################################
 
         contador += 1
