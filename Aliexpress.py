@@ -108,20 +108,24 @@ if __name__ == "__main__":
     campo_pesquisa.send_keys(produto)
     botao_lupa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-button")))
     botao_lupa.click()
-    sleep(10)
+    sleep(1)
     print(f'PRODUTO: {produto.upper()}')
 
     ######################################## CAMPO PESQUISA ########################################
 
     click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
+    sleep(1)
 
 codigo_fonte = navegador.page_source
 codigo_fonte = BeautifulSoup(codigo_fonte,'html.parser')
 codigo_fonte = str(codigo_fonte)
-codigo_fonte = re.findall(r'</use></svg></div></div></div></div><div class=.{0,20}><a class', codigo_fonte)
-codigo_fonte = codigo_fonte[0]
-codigo_fonte = re.sub(r'</use></svg></div></div></div></div><div class=', '', codigo_fonte)
-codigo_fonte = re.sub(r'><a class', '',codigo_fonte)
+codigo_fonte = re.findall(r'</path></svg></span></div></div><div class=.{0,100}><a class', codigo_fonte)
+codigo_fonte = str(codigo_fonte[0])
+codigo_fonte = re.findall(r'=\".{0,50}\" data', codigo_fonte)
+codigo_fonte = str(codigo_fonte[0])
+codigo_fonte = re.findall(r'\".+\"', codigo_fonte)
+codigo_fonte = str(codigo_fonte[0])
+codigo_fonte = re.sub(r'"\[', '',codigo_fonte)
 codigo_fonte = codigo_fonte.replace('"','')
 
 
