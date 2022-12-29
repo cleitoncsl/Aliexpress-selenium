@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import re
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -95,7 +96,7 @@ if __name__ == "__main__":
     sleep(5)
     ######################################## ACEITAR OS COOKIES ########################################
     # cookie_accept = navegador.find_element(By.XPATH, "/html/body/div[4]/div/div[2]/div[3]/div[2]")
-    cookie_accept = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, "/html/body/div[4]/div/div[2]/div[3]/div[2]"))).click()
+    cookie_accept = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "_24EHh"))).click()
     # sleep(1)
     ######################################## ACEITAR OS COOKIES ########################################
 
@@ -114,9 +115,19 @@ if __name__ == "__main__":
 
     click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
 
+codigo_fonte = navegador.page_source
+codigo_fonte = BeautifulSoup(codigo_fonte,'html.parser')
+codigo_fonte = str(codigo_fonte)
+codigo_fonte = re.findall(r'</use></svg></div></div></div></div><div class=.{0,20}><a class', codigo_fonte)
+codigo_fonte = codigo_fonte[0]
+codigo_fonte = re.sub(r'</use></svg></div></div></div></div><div class=', '', codigo_fonte)
+codigo_fonte = re.sub(r'><a class', '',codigo_fonte)
+codigo_fonte = codigo_fonte.replace('"','')
+
+
 
 # div_mae = navegador.find_element(By.XPATH, "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]")
-div_mae = div_mae = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "list--gallery--34TropR")))
+div_mae = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, codigo_fonte)))
 sleep(1)
 html_content = div_mae.get_attribute('outerHTML')
 sleep(1)
@@ -137,7 +148,14 @@ soup = BeautifulSoup(html_content, 'html.parser')
 # a class="_3t7zg _2f4Ho"
 
 #lista_produtos = soup.find_all('div', class_='_3GR-w')
-lista_produtos = soup.find_all('a', class_='manhattan--container--1lP57Ag cards--gallery--2o6yJVt')
+str_soup = str(soup)
+par_lista_produto = re.findall(r'<a class=.+', str_soup)
+par_lista_produto = str(par_lista_produto)
+par_lista_produto = re.findall(r'a class=.{0,50} href', par_lista_produto)
+par_lista_produto = par_lista_produto[0]
+par_lista_produto = par_lista_produto.replace('a class="','')
+par_lista_produto = par_lista_produto.replace('" href','')
+lista_produtos = soup.find_all('a', class_=par_lista_produto)
 
 sleep(1)
 
@@ -155,7 +173,7 @@ set_link_produto = []
 set_link_loja = []
 set_promocao = []
 set_top_selling = []
-botao = navegador.find_element(By.CSS_SELECTOR,"#root > div.root--container--2gVZ5S0 > div > div.right--container--1WU9aL4.right--hasPadding--52H__oG > div > div.content--container--2dDeH1y > div.pagination--paginationList--2qhuJId > div.pagination--left--3ZLy8Mu > ul > li:nth-child(" + str(contador_page) + ")")
+botao = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/div/div[3]/div/div[1]/div/button[2]')))
 
 while len(botao.text) > 0:
     for produto in lista_produtos:
@@ -421,7 +439,6 @@ while len(botao.text) > 0:
     contador = 1
     if len(botao.text) > 0:
         try:
-            botao = navegador.find_element(By.CSS_SELECTOR,"#root > div.root--container--2gVZ5S0 > div > div.right--container--1WU9aL4.right--hasPadding--52H__oG > div > div.content--container--2dDeH1y > div.pagination--paginationList--2qhuJId > div.pagination--left--3ZLy8Mu > ul > li:nth-child(" + str(contador_page) + ")")
             botao.click()
             sleep(10)
             click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
