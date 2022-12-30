@@ -79,18 +79,20 @@ if __name__ == "__main__":
     site = "https://pt.aliexpress.com"
 
     #------------CHROME------------#
-    option = Options()
-    option.add_argument("--incognito")
-    option.headless = False
-    navegador = webdriver.Chrome(options=option)
+    #option = Options()
+    #option.add_argument("--incognito")
+    #option.add_argument("start-minimized")
+    #option.add_argument("headless")
+    #option.headless = False
+    #navegador = webdriver.Chrome(options=option)
     # ------------CHROME------------#
 
-    #option = webdriver.EdgeOptions()
-    # option.add_argument("start-minimized")
-    # option.add_argument("inprivate")
-    # option.add_argument("headless")
-    # option.headless = False
-    # navegador = webdriver.Edge(options=option)
+    option = webdriver.EdgeOptions()
+    option.add_argument("start-minimized")
+    option.add_argument("inprivate")
+    option.add_argument("headless")
+    option.headless = False
+    navegador = webdriver.Edge(options=option)
 
     navegador.get(url)
     sleep(5)
@@ -116,6 +118,8 @@ if __name__ == "__main__":
     click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
     sleep(1)
 
+    ######################################## DIV MAE ########################################
+
 codigo_fonte = navegador.page_source
 codigo_fonte = BeautifulSoup(codigo_fonte,'html.parser')
 codigo_fonte = str(codigo_fonte)
@@ -128,6 +132,7 @@ codigo_fonte = str(codigo_fonte[0])
 codigo_fonte = re.sub(r'"\[', '',codigo_fonte)
 codigo_fonte = codigo_fonte.replace('"','')
 
+######################################## DIV MAE ########################################
 
 
 # div_mae = navegador.find_element(By.XPATH, "/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]")
@@ -136,7 +141,7 @@ sleep(1)
 html_content = div_mae.get_attribute('outerHTML')
 sleep(1)
 soup = BeautifulSoup(html_content, 'html.parser')
-
+sleep(2)
 #print(soup.prettify())
 
 # _3t7zg _2f4Ho
@@ -152,16 +157,28 @@ soup = BeautifulSoup(html_content, 'html.parser')
 # a class="_3t7zg _2f4Ho"
 
 #lista_produtos = soup.find_all('div', class_='_3GR-w')
-str_soup = str(soup)
-par_lista_produto = re.findall(r'<a class=.+', str_soup)
-par_lista_produto = str(par_lista_produto)
-par_lista_produto = re.findall(r'a class=.{0,50} href', par_lista_produto)
-par_lista_produto = par_lista_produto[0]
-par_lista_produto = par_lista_produto.replace('a class="','')
-par_lista_produto = par_lista_produto.replace('" href','')
-lista_produtos = soup.find_all('a', class_=par_lista_produto)
+# str_soup = str(soup)
+#par_lista_produto = re.findall(r'<a class=.+', str_soup)
+#par_lista_produto = str(par_lista_produto)
+#par_lista_produto = re.findall(r'a class=.{0,50} href', par_lista_produto)
+#par_lista_produto = par_lista_produto[0]
+#par_lista_produto = par_lista_produto.replace('a class="','')
+#par_lista_produto = par_lista_produto.replace('" href','')
 
+######################################## DIV PRODUTO ########################################
+
+codigo_fonte_produto = str(soup)
+codigo_fonte_produto = re.findall(r'</a></span></div></a><a class=.{0,100}\" href', codigo_fonte_produto)
+codigo_fonte_produto = str(codigo_fonte_produto[0])
+codigo_fonte_produto = re.findall(r'\".{0,100}\"', codigo_fonte_produto)
+codigo_fonte_produto = str(codigo_fonte_produto[0])
+codigo_fonte_produto = re.findall(r'\".+\"', codigo_fonte_produto)
+codigo_fonte_produto = str(codigo_fonte_produto[0])
+codigo_fonte_produto = codigo_fonte_produto.replace('"','')
+lista_produtos = soup.find_all('a', class_=codigo_fonte_produto)
 sleep(1)
+
+######################################## DIV PRODUTO ########################################
 
 velocimento = 0
 contador = 0
@@ -177,15 +194,27 @@ set_link_produto = []
 set_link_loja = []
 set_promocao = []
 set_top_selling = []
-botao = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/div/div[3]/div/div[1]/div/button[2]')))
+botao = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="root"]/div[1]/div/div[2]/div/div[2]/div[4]/div[1]/ul/li[9]')))
 
 while len(botao.text) > 0:
     for produto in lista_produtos:
+        #--REGEX NOME PRODUTO
+
+        codigo_nome_produto = str(produto)
+        codigo_nome_produto = re.findall(r'<h1 class=.{0,250} </h1', codigo_nome_produto)
+        codigo_nome_produto = str(codigo_nome_produto)
+        codigo_nome_produto = re.findall(r'\".{0,250}\">', codigo_nome_produto)
+        codigo_nome_produto = str(codigo_nome_produto)
+        codigo_nome_produto = re.sub(r"\[|\]|>|\\|\"|'",'', codigo_nome_produto)
+        codigo_nome_produto = str(codigo_nome_produto)
+
+        #--REGEX NOME PRODUTO
+
         sleep(0.1)
         print(f'----------------------------------------ID-{contador}----------------------------------------------------------------------')
         ######################################## NOME PRODUTO ########################################
         #
-        nome_produto = produto.select('h1', class_="manhattan--titleText--WccSjUS")
+        nome_produto = produto.select('h1', class_=codigo_nome_produto)
         sleep(velocimento)
         print(f'Nome -> {nome_produto[0].getText()}')
         vNome_produto = nome_produto[0].text
