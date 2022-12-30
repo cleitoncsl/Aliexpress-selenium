@@ -11,10 +11,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 from collections import Counter
 
-# url = "https://pt.aliexpress.com/w/wholesale-xiaomi-mi-pad-5.html?catId=0&initiative_id=SB_20221224181351&SearchText=xiaomi%2Bmi%2Bpad%2B5&spm=a2g0o.home.1000002.0&dida=y"
-url = "https://pt.aliexpress.com/"
+velocimento = 1
 
-sleep(1) # Time in seconds
+url = "https://www.aliexpress.com/"
+
+sleep(velocimento) # Time in seconds
 
 os.system("taskkill /f /im chromedriver.exe")
 os.system("taskkill /f /im msedge.exe")
@@ -79,44 +80,60 @@ if __name__ == "__main__":
     site = "https://pt.aliexpress.com"
 
     #------------CHROME------------#
-    #option = Options()
-    #option.add_argument("--incognito")
-    #option.add_argument("start-minimized")
-    #option.add_argument("headless")
-    #option.headless = False
-    #navegador = webdriver.Chrome(options=option)
-    # ------------CHROME------------#
-
-    option = webdriver.EdgeOptions()
+    option = Options()
+    option.add_argument("incognito")
+    option.add_argument("disable-notifications")
+    option.add_argument("disable-infobars")
+    option.add_argument("disable-extensions")
     option.add_argument("start-minimized")
-    option.add_argument("inprivate")
     option.add_argument("headless")
     option.headless = False
-    navegador = webdriver.Edge(options=option)
+    navegador = webdriver.Chrome(options=option)
+    # ------------CHROME------------#
+
+    # ------------EDGE------------#
+    #option = webdriver.EdgeOptions()
+    #option.add_argument("start-minimized")
+    #option.add_argument("disable-notifications")
+    #option.add_argument("disable-extensions")
+    #option.add_argument("inprivate")
+    #option.add_argument("headless")
+    #option.headless = False
+    #navegador = webdriver.Edge(options=option)
+    # ------------EDGE------------#
 
     navegador.get(url)
     sleep(5)
     ######################################## ACEITAR OS COOKIES ########################################
     # cookie_accept = navegador.find_element(By.XPATH, "/html/body/div[4]/div/div[2]/div[3]/div[2]")
-    cookie_accept = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "_24EHh"))).click()
-    # sleep(1)
+    try:
+        cookie_accept = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "_24EHh"))).click()
+        print(f'Cookies Aceitos')
+    except Exception as e:
+        print(f'Cookies Aceitos')
+    sleep(velocimento)
     ######################################## ACEITAR OS COOKIES ########################################
 
     ######################################## CAMPO PESQUISA ########################################
     # campo_pesquisa = navegador.find_element(By.ID, "search-key")
-    campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.ID, "search-key")))
-    produto = "XIAOMI MI PAD"
+    try:
+        campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.ID, "search-key")))
+    except Exception as e:
+        campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-key")))
+    ######################################## CAMPO PESQUISA ########################################
+
+    produto = "XIAOMI MI PAD 5"
     #produto = input("Digite o produto desejado: ")
     campo_pesquisa.send_keys(produto)
     botao_lupa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-button")))
     botao_lupa.click()
-    sleep(1)
+    sleep(velocimento)
     print(f'PRODUTO: {produto.upper()}')
 
     ######################################## CAMPO PESQUISA ########################################
 
     click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
-    sleep(1)
+    sleep(velocimento)
 
     ######################################## DIV MAE ########################################
 
@@ -180,9 +197,9 @@ sleep(1)
 
 ######################################## DIV PRODUTO ########################################
 
-velocimento = 0
 contador = 0
-contador_page = 2
+contador_page = 10
+i = 0
 set_produto = []
 set_preco_produto = []
 set_qtde_vendas = []
@@ -195,8 +212,10 @@ set_link_loja = []
 set_promocao = []
 set_top_selling = []
 botao = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="root"]/div[1]/div/div[2]/div/div[2]/div[4]/div[1]/ul/li[9]')))
+sleep(velocimento)
 
-while len(botao.text) > 0:
+while i  < contador_page:
+    print(f'Pagina {i}')
     for produto in lista_produtos:
         #--REGEX NOME PRODUTO
 
@@ -210,7 +229,7 @@ while len(botao.text) > 0:
 
         #--REGEX NOME PRODUTO
 
-        sleep(0.1)
+        sleep(1)
         print(f'----------------------------------------ID-{contador}----------------------------------------------------------------------')
         ######################################## NOME PRODUTO ########################################
         #
@@ -219,11 +238,24 @@ while len(botao.text) > 0:
         print(f'Nome -> {nome_produto[0].getText()}')
         vNome_produto = nome_produto[0].text
         set_produto.append(vNome_produto)
+        sleep(velocimento)
         #
         ######################################## NOME PRODUTO ################################################################################ PRODUTO ########################################
 
         ######################################## PRECO PRODUTO ########################################
-        preco_produto = produto.find('div', class_="manhattan--price-sale--1CCSZfK").select('a span')
+        #--REGEX PREÇO PRODUTO
+
+        codigo_preco_produto = str(produto)
+        codigo_preco_produto = re.findall(r'\"><div class=\".{0,50}\"><span style=', codigo_preco_produto)
+        codigo_preco_produto = str(codigo_preco_produto)
+        codigo_preco_produto = re.findall(r'\".{0,250}\">', codigo_preco_produto)
+        codigo_preco_produto = str(codigo_preco_produto)
+        codigo_preco_produto = re.sub(r"><div class=|\[|\']|>|\\|\"|'\"|'|=",'', codigo_preco_produto)
+        codigo_preco_produto = str(codigo_preco_produto)
+        sleep(velocimento)
+
+        #--REGEX PREÇO PRODUTO
+        preco_produto = produto.find('div', class_=codigo_preco_produto).select('a span')
         tam_preco = len(preco_produto)
         sleep(velocimento)
         try:
@@ -262,6 +294,7 @@ while len(botao.text) > 0:
         except Exception as e:
             print(f'Preço -> 0')
             vPreco_produto = 0
+            sleep(velocimento)
         # set_preco_produto.append(vPreco_produto) <-deletar
         ######################################## PRECO PRODUTO ########################################
 
@@ -364,18 +397,34 @@ while len(botao.text) > 0:
             vLoja = "-"
 
         set_loja.append(vLoja)
+        sleep(velocimento)
         ######################################## LOJA ########################################
 
         ######################################## LINK PRODUTO ########################################
         link_produto = [a['href'] for a in soup.find_all('a', href=True) if a.text]
-        if contador == 0:
-            x = contador
-        elif (contador % 2) == 0:
-            contador
-        else:
-            x = contador + 1
+        try:
+            if contador == 0:
+                x = contador
+                link_produto_final = link_produto[x]
+            elif contador == 119 or contador == 120:
+                contador
+                x = contador
+                link_produto_final = link_produto[x]
+            elif (contador % 2) == 0:
+                contador
+                x = contador
+                link_produto_final = link_produto[x]
+            else:
+                x = contador + 1
+            link_produto_final = link_produto[x]
 
-        link_produto_final = link_produto[x]
+        except Exception as e:
+            contador
+            x = contador
+            link_produto_final = link_produto[x]
+            set_link_produto.append(vLinkProdutoFinal)
+            print(f'Link Produto -> -')
+
         try:
             if link_produto_final is None:
                 print('Loja -> -')
@@ -428,6 +477,7 @@ while len(botao.text) > 0:
         except Exception as e:
             print(f'Promoção -> -')
             vPromocao = "(n)"
+            sleep(velocimento)
 
         ######################################## PROMOCAO ########################################
 
@@ -465,11 +515,13 @@ while len(botao.text) > 0:
 
         with pd.ExcelWriter(r"E:\Users\cleit\Documents\CURSO PYTHON\Aliexpress-selenium\teste.xlsx", engine="xlsxwriter") as writer:
             data_frame.to_excel(writer)
+        sleep(velocimento)
 
 
 
     contador_page += 1
-    contador = 1
+    contador += 1
+    i += 1
     if len(botao.text) > 0:
         try:
             botao.click()
