@@ -11,7 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 from collections import Counter
 
-velocimento = 1
+velocimento = 0
 
 url = "https://www.aliexpress.com/"
 
@@ -29,43 +29,43 @@ def click_button (navegador, name_button, id_delay):
                 By.XPATH, name_button)))
 
         navegador.execute_script("window.scrollTo(0,1000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,1500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,2000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,2500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,3000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,3500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,4000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,4500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,5000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,5500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,6000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,6500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,7000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,7500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,8000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,8500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,9000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,9500,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,10000,document.body.scrollHeight)")
-        sleep(1)
+        sleep(0.5)
         navegador.execute_script("window.scrollTo(0,0, document.body.scrollHeight)")
 
         print(f'-> Cache da página executado')
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     option.add_argument("disable-infobars")
     option.add_argument("disable-extensions")
     option.add_argument("start-minimized")
-    option.add_argument("headless")
+    #option.add_argument("headless")
     option.headless = False
     navegador = webdriver.Chrome(options=option)
     # ------------CHROME------------#
@@ -229,7 +229,7 @@ while i  < contador_page:
 
         #--REGEX NOME PRODUTO
 
-        sleep(1)
+        sleep(velocimento)
         print(f'----------------------------------------ID-{contador}----------------------------------------------------------------------')
         ######################################## NOME PRODUTO ########################################
         #
@@ -406,17 +406,27 @@ while i  < contador_page:
             if contador == 0:
                 x = contador
                 link_produto_final = link_produto[x]
-            elif contador == 119 or contador == 120:
-                contador
-                x = contador
-                link_produto_final = link_produto[x]
+                vLinkProdutoFinal = "https:" + link_produto_final
+                set_link_produto.append(vLinkProdutoFinal)
+                print(f'Link Produto -> {"https:" + link_produto_final}')
+
             elif (contador % 2) == 0:
                 contador
                 x = contador
                 link_produto_final = link_produto[x]
+                set_link_produto.append(vLinkProdutoFinal)
+                print(f'Link Produto -> {"https:" + link_produto_final}')
+
+            elif link_produto_final is None:
+                print('Loja -> -')
+                vLinkProdutoFinal = "-"
+                set_link_produto.append(vLinkProdutoFinal)
+
             else:
                 x = contador + 1
-            link_produto_final = link_produto[x]
+                link_produto_final = link_produto_final
+                set_link_produto.append(vLinkProdutoFinal)
+                print(f'Link Produto -> {"https:" + link_produto_final}')
 
         except Exception as e:
             contador
@@ -425,20 +435,7 @@ while i  < contador_page:
             set_link_produto.append(vLinkProdutoFinal)
             print(f'Link Produto -> -')
 
-        try:
-            if link_produto_final is None:
-                print('Loja -> -')
-                vLinkProdutoFinal = "-"
 
-            else:
-                print(f'Link Produto -> {"https:" + link_produto_final}')
-                vLinkProdutoFinal = "https:" + link_produto_final
-
-        except Exception as e:
-            print(f'Link Produto -> -')
-            vLinkProdutoFinal = "-"
-
-        set_link_produto.append(vLinkProdutoFinal)
         sleep(velocimento)
         ######################################## LINK PRODUTO ########################################
 
@@ -446,17 +443,20 @@ while i  < contador_page:
         link_loja = link_produto[x + 1]
         try:
             if link_loja is None:
+                vLinkLojaFinal = 0
+                set_link_loja.append(vLinkLojaFinal)
                 print(f'Link Loja -> -')
             else:
-                print(f'Link Loja - >{"https:" + link_loja}')
                 vLinkLojaFinal = "https:" + link_loja
+                set_link_loja.append(vLinkLojaFinal)
+                print(f'Link Loja - >{"https:" + link_loja}')
 
 
         except Exception as e:
-            print('Link Loja -> -')
             vLinkLojaFinal = 0
+            set_link_loja.append(vLinkLojaFinal)
+            print('Link Loja -> -')
 
-        set_link_loja.append(vLinkLojaFinal)
         sleep(velocimento)
         ######################################## LINK LOJA ########################################
 
@@ -489,17 +489,17 @@ while i  < contador_page:
             if top_selling is None:
                 print('top_selling? -> (n)')
                 v_top_selling = "(n)"
+                set_top_selling.append(v_top_selling)
 
             else:
                     print(f'top_selling? -> (s)')
                     v_top_selling = "(s)"
+                    set_top_selling.append(v_top_selling)
 
         except Exception as e:
             print(f'top_selling -> (n)')
             v_top_selling = "(n)"
 
-
-        set_top_selling.append(v_top_selling)
         sleep(velocimento)
         ######################################## TOP SELLING ########################################
 
@@ -525,7 +525,7 @@ while i  < contador_page:
     if len(botao.text) > 0:
         try:
             botao.click()
-            sleep(10)
+            sleep(5)
             click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
             sleep(1)
             div_mae = navegador.find_element(By.CLASS_NAME, "list--gallery--34TropR")
