@@ -11,7 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
 from collections import Counter
 
-velocimento = 0
+velocimento = 0.0039
 
 url = "https://www.aliexpress.com/"
 
@@ -77,29 +77,29 @@ def click_button (navegador, name_button, id_delay):
 
 if __name__ == "__main__":
     delay = 10
-    site = "https://pt.aliexpress.com"
+    site = "https://www.aliexpress.com/"
 
     #------------CHROME------------#
-    option = Options()
-    option.add_argument("incognito")
-    option.add_argument("disable-notifications")
-    option.add_argument("disable-infobars")
-    option.add_argument("disable-extensions")
-    option.add_argument("start-minimized")
+    #option = Options()
+    #option.add_argument("incognito")
+    #option.add_argument("disable-notifications")
+    #option.add_argument("disable-infobars")
+    #option.add_argument("disable-extensions")
+    #option.add_argument("start-minimized")
     #option.add_argument("headless")
-    option.headless = False
-    navegador = webdriver.Chrome(options=option)
+    #option.headless = False
+    #navegador = webdriver.Chrome(options=option)
     # ------------CHROME------------#
 
     # ------------EDGE------------#
-    #option = webdriver.EdgeOptions()
-    #option.add_argument("start-minimized")
-    #option.add_argument("disable-notifications")
-    #option.add_argument("disable-extensions")
-    #option.add_argument("inprivate")
+    option = webdriver.EdgeOptions()
+    option.add_argument("start-minimized")
+    option.add_argument("disable-notifications")
+    option.add_argument("disable-extensions")
+    option.add_argument("inprivate")
     #option.add_argument("headless")
-    #option.headless = False
-    #navegador = webdriver.Edge(options=option)
+    option.headless = False
+    navegador = webdriver.Edge(options=option)
     # ------------EDGE------------#
 
     navegador.get(url)
@@ -122,6 +122,7 @@ if __name__ == "__main__":
         campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-key")))
     ######################################## CAMPO PESQUISA ########################################
 
+    #produto = "XIAOMI MI PAD 5"
     produto = "XIAOMI MI PAD 5"
     #produto = input("Digite o produto desejado: ")
     campo_pesquisa.send_keys(produto)
@@ -132,7 +133,7 @@ if __name__ == "__main__":
 
     ######################################## CAMPO PESQUISA ########################################
 
-    click_button(navegador, "//div[@id='root']/div/div/div[2]", 30)
+    click_button(navegador, "//div[@id='root']/div/div/div[2]", 15)
     sleep(velocimento)
 
     ######################################## DIV MAE ########################################
@@ -198,8 +199,9 @@ sleep(1)
 ######################################## DIV PRODUTO ########################################
 
 contador = 0
-contador_page = 10
+contador_page = 5
 i = 0
+set_lista_contador = []
 set_produto = []
 set_preco_produto = []
 set_qtde_vendas = []
@@ -214,8 +216,8 @@ set_top_selling = []
 botao = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="root"]/div[1]/div/div[2]/div/div[2]/div[4]/div[1]/ul/li[9]')))
 sleep(velocimento)
 
-while i  < contador_page:
-    print(f'Pagina {i}')
+while i  <= contador_page:
+
     for produto in lista_produtos:
         #--REGEX NOME PRODUTO
 
@@ -235,7 +237,7 @@ while i  < contador_page:
         #
         nome_produto = produto.select('h1', class_=codigo_nome_produto)
         sleep(velocimento)
-        print(f'Nome -> {nome_produto[0].getText()}')
+        print(f'NOME -> {nome_produto[0].getText()}')
         vNome_produto = nome_produto[0].text
         set_produto.append(vNome_produto)
         sleep(velocimento)
@@ -260,39 +262,51 @@ while i  < contador_page:
         sleep(velocimento)
         try:
             if tam_preco == 6:
-                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}')
+                print(f'PRECO -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}')
                 vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText() + preco_produto[5].getText()}
+                vPreco_produto = str(vPreco_produto)
+                vPreco_produto = re.sub(r"{|}|\'|R\$",'', vPreco_produto)
                 set_preco_produto.append(vPreco_produto)
 
             elif tam_preco == 5:
-                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText()}')
+                print(f'PRECO -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText()}')
                 vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText() + preco_produto[4].getText()}
+                vPreco_produto = str(vPreco_produto)
+                vPreco_produto = re.sub(r"{|}|\'|R\$",'', vPreco_produto)
                 set_preco_produto.append(vPreco_produto)
 
 
 
             elif tam_preco == 4:
-                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}')
+                print(f'PRECO -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}')
                 vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() + preco_produto[3].getText()}
+                vPreco_produto = str(vPreco_produto)
+                vPreco_produto = re.sub(r"{|}|\'|R\$",'', vPreco_produto)
                 set_preco_produto.append(vPreco_produto)
 
             elif tam_preco == 3:
-                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() }')
+                print(f'PRECO -> {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() }')
                 vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() + preco_produto[2].getText() }
+                vPreco_produto = str(vPreco_produto)
+                vPreco_produto = re.sub(r"{|}|\'|R\$",'', vPreco_produto)
                 set_preco_produto.append(vPreco_produto)
 
             elif tam_preco == 2:
-                print(f'Preço -> {preco_produto[0].getText() + preco_produto[1].getText() }')
+                print(f'PRECO -> {preco_produto[0].getText() + preco_produto[1].getText() }')
                 vPreco_produto = {preco_produto[0].getText() + preco_produto[1].getText() }
+                vPreco_produto = str(vPreco_produto)
+                vPreco_produto = re.sub(r"{|}|\'|R\$",'', vPreco_produto)
                 set_preco_produto.append(vPreco_produto)
 
             elif tam_preco == 1:
-                print(f'Preço -> {preco_produto[0].getText()}')
+                print(f'PRECO -> {preco_produto[0].getText()}')
                 vPreco_produto = {preco_produto[0].getText()}
+                vPreco_produto = str(vPreco_produto)
+                vPreco_produto = re.sub(r"{|}|\'|R\$",'', vPreco_produto)
                 set_preco_produto.append(vPreco_produto)
 
         except Exception as e:
-            print(f'Preço -> 0')
+            print(f'PRECO -> 0')
             vPreco_produto = 0
             sleep(velocimento)
         # set_preco_produto.append(vPreco_produto) <-deletar
@@ -303,16 +317,20 @@ while i  < contador_page:
         sleep(velocimento)
         try:
             if qtde_vendas is None or len(qtde_vendas) == 0:
-                print('qtde_vendas -> 0')
+                print('QTDE VENDAS -> 0')
                 vQtde_Vendas = 0
+                set_qtde_vendas.append(vQtde_Vendas)
 
             else:
-                print(f'qtde_vendas -> {qtde_vendas[0].getText()}')
+                print(f'QTDE VENDAS -> {qtde_vendas[0].getText()}')
                 vQtde_Vendas = qtde_vendas[0].getText()
+                vQtde_Vendas = str(vQtde_Vendas)
+                vQtde_Vendas = re.sub(r"  vendido\(s\)",'', vQtde_Vendas)
+                set_qtde_vendas.append(vQtde_Vendas)
 
         except Exception as e:
-            print(f'qtde_vendas -> -')
-        set_qtde_vendas.append(vQtde_Vendas)
+            print(f'QTDE VENDAS -> -')
+            set_qtde_vendas.append(0)
         ######################################## QTDE PRODUTO ########################################
 
 
@@ -323,17 +341,17 @@ while i  < contador_page:
 
             tam_campo_frete = len(tipo_frete)
             if tam_campo_frete == 2:
-                print(f'Preço -> {tipo_frete[1].getText()}')
+                print(f'TIPO FRETE -> {tipo_frete[1].getText()}')
                 vTipo_Frete = {tipo_frete[1].getText()}
                 set_tipo_frete.append(vTipo_Frete)
 
             elif tam_campo_frete == 1:
-                print(f'Preço -> {tipo_frete[0].getText()}')
+                print(f'TIPO FRETE -> {tipo_frete[0].getText()}')
                 vTipo_Frete = {tipo_frete[0].getText()}
                 set_tipo_frete.append(vTipo_Frete)
 
             else:
-                print('fPreco -> 0')
+                print('TIPO FRETE -> 0')
                 set_tipo_frete.append(0)
 
         except Exception as e:
@@ -348,15 +366,15 @@ while i  < contador_page:
         sleep(velocimento)
         try:
             if tipo_devolucao is None:
-                print('Frete -> -')
+                print('DEVOLUCAO -> -')
                 vTipo_Devolucao = tipo_devolucao[0].getText()
 
             else:
-                print(f'Devolução -> {tipo_devolucao[1].getText()}')
+                print(f'DEVOLUCAO -> {tipo_devolucao[1].getText()}')
                 vTipo_Devolucao = tipo_devolucao[0].getText()
 
         except Exception as e:
-            print(f'Devolução -> -')
+            print(f'DEVOLUCAO -> -')
             vTipo_Devolucao = "-"
         set_tipo_devolucao.append(vTipo_Devolucao)
 
@@ -367,14 +385,14 @@ while i  < contador_page:
         sleep(velocimento)
         try:
             if avaliacoes is None: #avaliacoes
-                print('Avaliações -> -')
+                print('AVALIACOES -> -')
                 vAvaliacoes = "-"
             else:
-                print(f'Avaliações -> {avaliacoes[0].getText()}')
+                print(f'AVALIACOES -> {avaliacoes[0].getText()}')
                 vAvaliacoes = avaliacoes[0].getText()
 
         except Exception as e:
-            print(f'Avaliações -> -')
+            print(f'AVALIACOES -> -')
             vAvaliacoes = "-"
 
         set_avaliacoes.append(vAvaliacoes)
@@ -385,15 +403,15 @@ while i  < contador_page:
         sleep(velocimento)
         try:
             if loja is None:
-                print('Loja -> -')
+                print('LOJA -> -')
                 vLoja = "-"
 
             else:
-                print(f'Loja -> {loja[0].getText()}')
+                print(f'LOJA -> {loja[0].getText()}')
                 vLoja = loja[0].getText()
 
         except Exception as e:
-            print(f'Loja -> -')
+            print(f'LOJA -> -')
             vLoja = "-"
 
         set_loja.append(vLoja)
@@ -408,17 +426,17 @@ while i  < contador_page:
                 link_produto_final = link_produto[x]
                 vLinkProdutoFinal = "https:" + link_produto_final
                 set_link_produto.append(vLinkProdutoFinal)
-                print(f'Link Produto -> {"https:" + link_produto_final}')
+                print(f'LINK PRODUTO -> {"https:" + link_produto_final}')
 
             elif (contador % 2) == 0:
                 contador
                 x = contador
                 link_produto_final = link_produto[x]
                 set_link_produto.append(vLinkProdutoFinal)
-                print(f'Link Produto -> {"https:" + link_produto_final}')
+                print(f'LINK PRODUTO -> {"https:" + link_produto_final}')
 
             elif link_produto_final is None:
-                print('Loja -> -')
+                print('LINK PRODUTO -> -')
                 vLinkProdutoFinal = "-"
                 set_link_produto.append(vLinkProdutoFinal)
 
@@ -426,36 +444,36 @@ while i  < contador_page:
                 x = contador + 1
                 link_produto_final = link_produto_final
                 set_link_produto.append(vLinkProdutoFinal)
-                print(f'Link Produto -> {"https:" + link_produto_final}')
+                print(f'LINK PRODUTO -> {"https:" + link_produto_final}')
 
         except Exception as e:
-            contador
-            x = contador
-            link_produto_final = link_produto[x]
+            link_produto_final
             set_link_produto.append(vLinkProdutoFinal)
-            print(f'Link Produto -> -')
-
+            print(f'LINK PRODUTO -> {"https:" + link_produto_final}')
 
         sleep(velocimento)
         ######################################## LINK PRODUTO ########################################
 
         ######################################## LINK LOJA ########################################
-        link_loja = link_produto[x + 1]
         try:
-            if link_loja is None:
+            link_loja = link_produto[x + 1]
+            tam_link_loja = len(link_loja)
+
+            if tam_link_loja is None:
                 vLinkLojaFinal = 0
                 set_link_loja.append(vLinkLojaFinal)
-                print(f'Link Loja -> -')
+                print(f'LINK LOJA - > -')
+
             else:
                 vLinkLojaFinal = "https:" + link_loja
                 set_link_loja.append(vLinkLojaFinal)
-                print(f'Link Loja - >{"https:" + link_loja}')
+                print(f'LINK LOJA - >{"https:" + vLinkLojaFinal}')
 
 
         except Exception as e:
-            vLinkLojaFinal = 0
-            set_link_loja.append(vLinkLojaFinal)
-            print('Link Loja -> -')
+                    vLinkLojaFinal
+                    set_link_loja.append(vLinkLojaFinal)
+                    print(f'LINK LOJA - > {"https:" + link_loja}')
 
         sleep(velocimento)
         ######################################## LINK LOJA ########################################
@@ -466,16 +484,16 @@ while i  < contador_page:
         try:
             len_promocao = len(promocao)
             if len_promocao == 2:
-                print(f'Promoção -> {promocao[0].getText()}')
+                print(f'PROMOCAO -> {promocao[0].getText()}')
                 vTipo_Frete = {promocao[0].getText()}
                 set_promocao.append(vTipo_Frete)
 
             else:
-                print(f'Promoção -> (n)')
+                print(f'PROMOCAO -> (n)')
                 set_promocao.append("(n)")
 
         except Exception as e:
-            print(f'Promoção -> -')
+            print(f'PROMOCAO -> -')
             vPromocao = "(n)"
             sleep(velocimento)
 
@@ -487,39 +505,28 @@ while i  < contador_page:
         try:
             top_selling = len(top_selling[0].get('src'))
             if top_selling is None:
-                print('top_selling? -> (n)')
+                print('TOP SELLING? -> (n)')
                 v_top_selling = "(n)"
                 set_top_selling.append(v_top_selling)
 
             else:
-                    print(f'top_selling? -> (s)')
+                    print(f'TOP SELLING? -> (s)')
                     v_top_selling = "(s)"
                     set_top_selling.append(v_top_selling)
 
         except Exception as e:
-            print(f'top_selling -> (n)')
+            print(f'TOP SELLING -> (n)')
             v_top_selling = "(n)"
+            set_top_selling.append(v_top_selling)
 
         sleep(velocimento)
         ######################################## TOP SELLING ########################################
 
+        set_lista_contador.append(contador)
         contador += 1
         x = contador
-        lista = list(zip(
-            set_produto, set_preco_produto, set_qtde_vendas, set_tipo_frete, set_tipo_devolucao,
-            set_avaliacoes, set_loja, set_link_produto, set_link_loja, set_promocao, set_top_selling)) ##resultado
-        data_frame = pd.DataFrame(lista,
-            columns=['Nome.Produto', 'Prc.Produto', 'Qtd.Vendas', 'Tipo.Frete', 'Tipo.Devolucao', 'Avaliacaoes',
-                     'Nome Loja', 'Link.Produto', 'Link.Loja', 'Promocao', 'Top.Selling'])
-
-
-        with pd.ExcelWriter(r"E:\Users\cleit\Documents\CURSO PYTHON\Aliexpress-selenium\teste.xlsx", engine="xlsxwriter") as writer:
-            data_frame.to_excel(writer)
         sleep(velocimento)
 
-
-
-    contador_page += 1
     contador += 1
     i += 1
     if len(botao.text) > 0:
@@ -530,6 +537,8 @@ while i  < contador_page:
             sleep(1)
             div_mae = navegador.find_element(By.CLASS_NAME, "list--gallery--34TropR")
             sleep(1)
+            print(f'#PAGINA -> {contador_page}')
+            print(f'#QTDE LINHAS -> {len(set_produto)}')
             print(f'#PARSING DOCUMENT#')
             html_content = div_mae.get_attribute('outerHTML')
             sleep(1)
@@ -538,10 +547,27 @@ while i  < contador_page:
             print(f'#PARSE NEXT PAGE#')
             lista_produtos = soup.find_all('a', class_='manhattan--container--1lP57Ag cards--gallery--2o6yJVt')
 
-
-
         except Exception as e:
             print(f'Erro')
 
+df = pd.DataFrame(data=(set_lista_contador), columns=["ID"])
+df = df.set_index('ID')
+df['NOME PRODUTO'] = set_produto
+df['PRECO'] = set_preco_produto
+df['QTDE VENDAS'] = set_qtde_vendas
+df['TIPO FRETE'] = set_tipo_frete
+df['DEVOLUCAO'] = set_tipo_devolucao
+df['AVALIACOES'] = set_avaliacoes
+df['LOJA'] = set_loja
+df['LINK PRODUTO'] = set_link_produto
+df['LINK LOJA'] = set_link_loja
+df['PROMOCAO'] = set_promocao
+df['TOP SELLING'] = set_top_selling
+data_frame = df
+print(df)
+
+with pd.ExcelWriter(r"E:\Users\cleit\Documents\CURSO PYTHON\Aliexpress-selenium\teste.xlsx",
+                    engine="xlsxwriter") as writer:
+    data_frame.to_excel(writer)
 
 navegador.quit()
