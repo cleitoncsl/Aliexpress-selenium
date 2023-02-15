@@ -97,7 +97,7 @@ if __name__ == "__main__":
     option.add_argument("disable-notifications")
     option.add_argument("disable-extensions")
     option.add_argument("inprivate")
-    #option.add_argument("headless")
+    option.add_argument("headless")
     option.headless = False
     navegador = webdriver.Edge(options=option)
     # ------------EDGE------------#
@@ -173,6 +173,13 @@ sleep(2)
 # _3t7zg _2f4Ho
 
 # a class="_3t7zg _2f4Ho"
+
+
+#$x("//a[@id = 'switcher-info']")[0].click()
+#$x("//span[@data-role = 'language-input']")[0].click()
+#$x("//a[text() = 'English']")[0].click()
+#$x("//button[text() = 'Save']")[0].click()
+#$x("//li[text() = 'Next']")[0].click()
 
 #lista_produtos = soup.find_all('div', class_='_3GR-w')
 # str_soup = str(soup)
@@ -566,7 +573,7 @@ df['TOP SELLING'] = set_top_selling
 data_frame = df
 print(df)
 
-with pd.ExcelWriter(r"E:\Users\cleit\Documents\CURSO PYTHON\Aliexpress-selenium\teste.xlsx",
+with pd.ExcelWriter(r"D:\PYTHON\ALIEXPRESS\Aliexpress-selenium\teste.xlsx",
                     engine="xlsxwriter") as writer:
     data_frame.to_excel(writer)
 
