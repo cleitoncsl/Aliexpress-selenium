@@ -98,10 +98,16 @@ if __name__ == "__main__":
     option.add_argument("disable-extensions")
     option.add_argument("inprivate")
     option.add_argument("headless")
-    option.headless = False
+    #option.headless = False
     navegador = webdriver.Edge(options=option)
     # ------------EDGE------------#
 
+    params = dict({
+        "latitude": 25.2048,
+        "longitude": 55.2708,
+        "accuracy": 100
+    })
+    navegador.execute_cdp_cmd("Emulation.setGeolocationOverride", params)
     navegador.get(url)
     sleep(5)
     ######################################## ACEITAR OS COOKIES ########################################
@@ -111,19 +117,67 @@ if __name__ == "__main__":
         print(f'Cookies Aceitos')
     except Exception as e:
         print(f'Cookies Aceitos')
-    sleep(velocimento)
+    sleep(5)
     ######################################## ACEITAR OS COOKIES ########################################
 
     ######################################## CAMPO PESQUISA ########################################
     # campo_pesquisa = navegador.find_element(By.ID, "search-key")
     try:
-        campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.ID, "search-key")))
+
+        print(f'Click Campo Pesquisa')
+        campo_pesquisa = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//a[@id = "switcher-info"]'))).click()
+        sleep(2)
+    except Exception as e:
+        campo_pesquisa = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//a[@id = "switcher-info"]'))).click()
+    ######################################## CAMPO PESQUISA ########################################
+
+    ######################################## CAMPO IDIOMA ########################################
+    try:
+        print(f'Click Campo Idioma')
+        campo_idioma = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.ID, "search-key")))
+        sleep(2)
     except Exception as e:
         campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-key")))
+    ######################################## CAMPO IDIOMA ########################################
+
+    ######################################## MENU IDIOMA ########################################
+    try:
+        print(f'Click Menu Idioma')
+        menu_idioma = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//span[@data-role = "language-input"]'))).click()
+        sleep(2)
+    except Exception as e:
+        menu_idioma = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//span[@data-role = "language-input"]'))).click()
+    ######################################## MENU IDIOMA ########################################
+
+    ######################################## SELECAO IDIOMA ########################################
+    try:
+        print(f'Click Seleção Idioma')
+        selecao_idioma = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//a[text() = "English"]'))).click()
+        sleep(2)
+    except Exception as e:
+        selecao_idioma = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//a[text() = "English"]'))).click()
+    ######################################## SELECAO IDIOMA ########################################
+    ######################################## SALVAR IDIOMA ########################################
+    try:
+        print(f'Salvar Idioma')
+        salvar_idioma = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//button[text() = "Filtrar"]'))).click()
+        sleep(2)
+    except Exception as e:
+        salvar_idioma = campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.XPATH, '//button[text() = "Filtrar"]'))).click()
+    ######################################## SALVAR IDIOMA ########################################
+
+    ######################################## CAMPO PESQUISA ########################################
+    # campo_pesquisa = navegador.find_element(By.ID, "search-key")
+    try:
+        campo_pesquisa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.ID, "search-key")))
+        sleep(2)
+    except Exception as e:
+        campo_pesquisa = WebDriverWait(navegador, delay).until(
+            ec.element_to_be_clickable((By.CLASS_NAME, "search-key")))
     ######################################## CAMPO PESQUISA ########################################
 
     #produto = "XIAOMI MI PAD 5"
-    produto = "XIAOMI MI PAD 5"
+    produto = "GALAXY WATCH 5"
     #produto = input("Digite o produto desejado: ")
     campo_pesquisa.send_keys(produto)
     botao_lupa = WebDriverWait(navegador, delay).until(ec.element_to_be_clickable((By.CLASS_NAME, "search-button")))
